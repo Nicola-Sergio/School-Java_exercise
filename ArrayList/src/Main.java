@@ -23,6 +23,8 @@ public class Main {
 		array.add(oggetto3);
 		array.add(oggetto4);
 		
+		//proviamo una modifica
+		
 	for(PersonaggioFamoso i : array) {//ciclo foreach
 		System.out.println(i.getNome());
 	}
