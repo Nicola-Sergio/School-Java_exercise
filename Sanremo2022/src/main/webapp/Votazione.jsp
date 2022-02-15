@@ -27,8 +27,17 @@ height:100px;
 <body>
 <div class="bg-success text-center div text-danger ">
 <h1 class="pt-3">Vota il tuo cantante preferito!</h1>
-<button class="button">Mi piace !</button>
-<button></button>
+<div class="container m-5">
+<%String [] object = (String)request.getParameter("object");					
+
+%>						
+<p>Esprimi un tuo parere su :<%=((String[])session.getAttribute("Array"))[Integer.parseInt(object)] %> </p> 
+<div class="row">
+<button class="button ">Mi piace !</button>
+<button>Non mi piace!</button>
+</div>
+</div>
+
 </div>
 </body>
 </html>

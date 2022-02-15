@@ -125,6 +125,7 @@ cantanti.add(oggetto11);
 int c = 0; //contatore per la stampa delle righe row che andranno a contenere le card
 int foreach=0; //contatore utilizzato per tenere traccia del numero di cilo del foreach
 String [] nomi = {"Gianni Morandi","Noemi","La rappresentante di lista","Yuman","Giusy Ferreri","Dargen D'amico","Achille Lauro","Rkomi","Mahmood & Blanco","Michele Bravi","Ana Mena","Massimo Ranieri"};
+session.setAttribute("Array",nomi);
 %>
 <div class="bg-secondary text-center mb-5">
 <h1>Sanremo 2022</h1>
@@ -144,7 +145,7 @@ String [] nomi = {"Gianni Morandi","Noemi","La rappresentante di lista","Yuman",
 		    out.println("<p class=\"card-text\">Vota" +" " +nomi[foreach]+".</p>");
 		   // out.println("<a href=\"Votazione.jsp?selected="+foreach +"\ name=\""+nomi[foreach] +"\" target=\"blank\" class=\"btn btn-primary\">Vai alla votazione</a>");
 		  
-		   out.println("<a href=\"Votazione.jsp?selected="+nomi[foreach].replaceAll("\\s+","")+ "\" target =\"blank\" class=\"btn btn-primary\">Go somewhere</a>");
+		   out.println("<a href=\"Votazione.jsp?selected="+nomi[foreach].replaceAll("\\s+","")+ "?object="+foreach +"\" target =\"blank\" class=\"btn btn-primary\">Go somewhere</a>");
 		   
 		   out.println("</div>");
 		out.println("</div>");
