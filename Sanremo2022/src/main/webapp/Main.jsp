@@ -8,9 +8,13 @@
 <title>Sanremo 2022</title>
 </head>
 <body>
-<%@ page import= "java.util.ArrayList,O_mallius.Cantanti"%>
+<%@ page import= "java.util.ArrayList,O_mallius.Cantanti,java.util.*"%>
 
 <%
+
+/*
+*Use http://easyonlineconverter.com/converters/java-string-escape.html for escaping
+*/
 
 //first object cantanti
 Cantanti oggetto = new Cantanti();
@@ -120,6 +124,7 @@ cantanti.add(oggetto10);
 cantanti.add(oggetto11);
 int c = 0; //contatore per la stampa delle righe row che andranno a contenere le card
 int foreach=0; //contatore utilizzato per tenere traccia del numero di cilo del foreach
+String [] nomi = {"Gianni Morandi","Noemi","La rappresentante di lista","Yuman","Giusy Ferreri","Dargen D'amico","Achille Lauro","Rkomi","Mahmood & Blanco","Michele Bravi","Ana Mena","Massimo Ranieri"};
 %>
 <div class="bg-secondary text-center mb-5">
 <h1>Sanremo 2022</h1>
@@ -135,10 +140,13 @@ int foreach=0; //contatore utilizzato per tenere traccia del numero di cilo del 
 		out.println("<div class=\"card m-2\" style=\"width: 18rem;\">");
 		  out.println("<img src=\""+cantanti.get(foreach).getImmagine()+"\"class=\"card-img-top\" alt=\"...\">");//inserisci altezza e larghezza(rispettivamente 300 e 300)
 		  out.println("<div class=\"card-body\">");
-		    out.println("<h5 class=\"card-title\">Immagine Sanremo</h5>");
-		    out.println("<p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>");
-		    out.println("<a href=\"Votazione.jsp?selected=\""+ foreach + "target=\"blank\" class=\"btn btn-primary\">Vai alla votazione</a>");
-		  out.println("</div>");
+		    out.println("<h5 class=\"card-title\">"+nomi[foreach] +"</h5>");
+		    out.println("<p class=\"card-text\">Vota" +" " +nomi[foreach]+".</p>");
+		   // out.println("<a href=\"Votazione.jsp?selected="+foreach +"\ name=\""+nomi[foreach] +"\" target=\"blank\" class=\"btn btn-primary\">Vai alla votazione</a>");
+		  
+		   out.println("<a href=\"Votazione.jsp?selected="+nomi[foreach].replaceAll("\\s+","")+ "\" target =\"blank\" class=\"btn btn-primary\">Go somewhere</a>");
+		   
+		   out.println("</div>");
 		out.println("</div>");
 		out.println("</div>");
 		c++;//ogni riga dovrà contenere 4 card,ogni card stampata dovrà incremenatre di 1 per andare ,una volta arrivato a 4, a chiudere la riga,per poi stamparne una nuova in cima al ciclo foreach
