@@ -28,10 +28,42 @@ height:100px;
 <div class="bg-success text-center div text-danger ">
 <h1 class="pt-3">Vota il tuo cantante preferito!</h1>
 <div class="container m-5">
-<%String [] object = (String)request.getParameter("object");					
+<% 
+out.println(request.getParameter("object"));
+%>		
 
-%>						
-<p>Esprimi un tuo parere su :<%=((String[])session.getAttribute("Array"))[Integer.parseInt(object)] %> </p> 
+<%/*
+
+for(Cantanti i : cantanti){
+if(c==0){
+	out.println("<div class=\"row\">");
+}
+
+	out.println("<div class=\"col-sm\">");
+	out.println("<div class=\"card m-2\" style=\"width: 18rem;\">");
+	  out.println("<img src=\""+cantanti.get(foreach).getImmagine()+"\"class=\"card-img-top\" height=\"250px\"alt=\"...\">");//inserisci altezza e larghezza(rispettivamente 300 e 300)
+	  out.println("<div class=\"card-body\">");
+	    out.println("<h5 class=\"card-title\">"+nomi[foreach] +"</h5>");
+	    out.println("<p class=\"card-text\">Vota" +" " +nomi[foreach]+".</p>");
+	   // out.println("<a href=\"Votazione.jsp?selected="+foreach +"\ name=\""+nomi[foreach] +"\" target=\"blank\" class=\"btn btn-primary\">Vai alla votazione</a>");
+	  
+	   out.println("<a href=\"Votazione.jsp?selected="+nomi[foreach].replaceAll("\\s+","")+ "?object="+foreach +"\" target =\"blank\" class=\"btn btn-primary\">Go somewhere</a>");
+	   
+	   out.println("</div>");
+	out.println("</div>");
+	out.println("</div>");
+	c++;//ogni riga dovrà contenere 4 card,ogni card stampata dovrà incremenatre di 1 per andare ,una volta arrivato a 4, a chiudere la riga,per poi stamparne una nuova in cima al ciclo foreach
+	if(c==4){
+		out.println("</div>");
+		c=0;
+	}
+foreach++;
+
+}
+
+
+*/ %>			
+<!-- <p>Esprimi un tuo parere su ://((String[])session.getAttribute("Array"))[Integer.parseInt(object)] %> </p>  -->
 <div class="row">
 <button class="button ">Mi piace !</button>
 <button>Non mi piace!</button>

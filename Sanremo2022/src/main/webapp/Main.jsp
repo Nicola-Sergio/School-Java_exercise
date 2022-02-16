@@ -18,6 +18,7 @@
 
 //first object cantanti
 Cantanti oggetto = new Cantanti();
+oggetto.setId(1);
 oggetto.setNome("Gianni");
 oggetto.setCognome("Morandi");
 oggetto.setEta(35);
@@ -139,7 +140,7 @@ session.setAttribute("Array",nomi);
 	
 		out.println("<div class=\"col-sm\">");
 		out.println("<div class=\"card m-2\" style=\"width: 18rem;\">");
-		  out.println("<img src=\""+cantanti.get(foreach).getImmagine()+"\"class=\"card-img-top\" alt=\"...\">");//inserisci altezza e larghezza(rispettivamente 300 e 300)
+		  out.println("<img src=\""+cantanti.get(foreach).getImmagine()+"\"class=\"card-img-top\" height=\"250px\"alt=\"...\">");//inserisci altezza e larghezza(rispettivamente 300 e 300)
 		  out.println("<div class=\"card-body\">");
 		    out.println("<h5 class=\"card-title\">"+nomi[foreach] +"</h5>");
 		    out.println("<p class=\"card-text\">Vota" +" " +nomi[foreach]+".</p>");

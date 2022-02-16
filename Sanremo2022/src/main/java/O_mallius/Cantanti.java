@@ -2,6 +2,8 @@ package O_mallius;
 
 public class Cantanti {
 	
+	
+	private int id;
 	 private String nome,cognome,immagine;
 	 private int eta;
 
@@ -16,6 +18,14 @@ public class Cantanti {
 
 	public String getNome() {
 		return nome;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public void setNome(String nome) {
