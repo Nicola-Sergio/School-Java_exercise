@@ -27,6 +27,7 @@ oggetto.setImmagine("https://www.sorrisi.com/wp-content/uploads/2022/01/gianni-m
 //second object cantanti
 
 Cantanti oggetto1 = new Cantanti();
+oggetto1.setId(2);
 oggetto1.setNome("Noemi");
 oggetto1.setCognome("Noemi");
 oggetto1.setEta(27);
@@ -35,6 +36,7 @@ oggetto1.setImmagine("https://www.sorrisi.com/wp-content/uploads/2022/01/noemi.j
 //third object cantanti 
 
 Cantanti oggetto2 = new Cantanti();
+oggetto2.setId(3);
 oggetto2.setNome("La rappresentante di lista");
 oggetto2.setCognome("La rappresentante di lista");
 oggetto2.setEta(34);
@@ -43,6 +45,7 @@ oggetto2.setImmagine("https://www.corriere.it/methode_image/2021/02/26/Spettacol
 //quarto oggetto 
 
 Cantanti oggetto3 = new Cantanti();
+oggetto3.setId(4);
 oggetto3.setNome("Yuman");
 oggetto3.setCognome("Yuman");
 oggetto3.setEta(36);
@@ -51,6 +54,7 @@ oggetto3.setImmagine("https://www.contra-ataque.it/wp-content/uploads/2022/01/Yu
 //quinto oggetto
 
 Cantanti oggetto4 = new Cantanti();
+oggetto4.setId(5);
 oggetto4.setNome("Giusy");
 oggetto4.setCognome("Giusy");
 oggetto4.setEta(29);
@@ -59,6 +63,7 @@ oggetto4.setImmagine("http://www.rai.it/resizegd/-x540/dl/img/2017/01/29/1485712
 //sesto oggetto 
 
 Cantanti oggetto5 = new Cantanti();
+oggetto5.setId(6);
 oggetto5.setNome("Dargen");
 oggetto5.setCognome("Dargen");
 oggetto5.setEta(24);
@@ -67,6 +72,7 @@ oggetto5.setImmagine("https://yt3.ggpht.com/ytc/AKedOLTyWkcSuomRXSLwMoU8N-wGmW2M
 //settimo oggetto
 
 Cantanti oggetto6 = new Cantanti();
+oggetto6.setId(7);
 oggetto6.setNome("Achille Lauro");
 oggetto6.setCognome("Achille Lauro");
 oggetto6.setEta(19);
@@ -75,6 +81,7 @@ oggetto6.setImmagine("https://staticfanpage.akamaized.net/wp-content/uploads/sit
 //ottavo oggetto 
 
 Cantanti oggetto7 = new Cantanti();
+oggetto7.setId(8);
 oggetto7.setNome("Rkomi");
 oggetto7.setCognome("Rkomi");
 oggetto7.setEta(34);
@@ -82,6 +89,7 @@ oggetto7.setImmagine("https://www.castellofestival.it/wp-content/uploads/2021/06
 
 //nono oggetto 
 Cantanti oggetto8 = new Cantanti();
+oggetto8.setId(9);
 oggetto8.setNome("Mahmood");
 oggetto8.setCognome("Mahmood");
 oggetto8.setEta(27);
@@ -89,6 +97,7 @@ oggetto8.setImmagine("https://media-assets.vanityfair.it/photos/61f9af0ee85700e7
 
 //decimo oggetto
 Cantanti oggetto9 = new Cantanti();
+oggetto9.setId(10);
 oggetto9.setNome("Michele");
 oggetto9.setCognome("Bravi");
 oggetto9.setEta(35);
@@ -97,6 +106,7 @@ oggetto9.setImmagine("https://www.amica.it/wp-content/uploads/2022/02/michele-br
 //undicesimo oggetto
 
 Cantanti oggetto10 = new Cantanti();
+oggetto10.setId(11);
 oggetto10.setNome("Ana");
 oggetto10.setCognome("Mena");
 oggetto10.setEta(28);
@@ -105,6 +115,7 @@ oggetto10.setImmagine("https://static.fanpage.it/wp-content/uploads/sites/14/202
 //dodicesimo oggetto
 
 Cantanti oggetto11 = new Cantanti();
+oggetto11.setId(12);
 oggetto11.setNome("Massimo");
 oggetto11.setCognome("Ranieri");
 oggetto11.setEta(28);
@@ -127,6 +138,7 @@ int c = 0; //contatore per la stampa delle righe row che andranno a contenere le
 int foreach=0; //contatore utilizzato per tenere traccia del numero di cilo del foreach
 String [] nomi = {"Gianni Morandi","Noemi","La rappresentante di lista","Yuman","Giusy Ferreri","Dargen D'amico","Achille Lauro","Rkomi","Mahmood & Blanco","Michele Bravi","Ana Mena","Massimo Ranieri"};
 session.setAttribute("Array",nomi);
+session.setAttribute("ArrayList",cantanti);
 %>
 <div class="bg-secondary text-center mb-5">
 <h1>Sanremo 2022</h1>
@@ -146,7 +158,7 @@ session.setAttribute("Array",nomi);
 		    out.println("<p class=\"card-text\">Vota" +" " +nomi[foreach]+".</p>");
 		   // out.println("<a href=\"Votazione.jsp?selected="+foreach +"\ name=\""+nomi[foreach] +"\" target=\"blank\" class=\"btn btn-primary\">Vai alla votazione</a>");
 		  
-		   out.println("<a href=\"Votazione.jsp?selected="+nomi[foreach].replaceAll("\\s+","")+ "?object="+foreach +"\" target =\"blank\" class=\"btn btn-primary\">Go somewhere</a>");
+		   out.println("<a href=\"Votazione.jsp?selected="+nomi[foreach].replaceAll("\\s+","")+ "&object="+foreach +"\" target =\"blank\" class=\"btn btn-primary\">Go somewhere</a>");
 		   
 		   out.println("</div>");
 		out.println("</div>");
