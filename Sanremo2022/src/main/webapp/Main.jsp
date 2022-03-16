@@ -68,6 +68,22 @@ ArrayList<Cantanti> cantanti = (ArrayList<Cantanti>)session.getAttribute("ArrayL
 	%>
 </h3>
 </div>
+<!-- 
+<div>
+<div class="col-sm">
+<div class="card m-2" style ="width:18rem;">
+<img src = "<%=cantanti.get(foreach).getImmagine()%>" class="card-img-top" height="250px" alt ="image" >"
+<div class="card-body">
+<h5 class="card-title"><%=nomi[foreach]%></h5>
+<p class=" card-text"><%=speak.get(voto)+" "+nomi[foreach]%>.</p>
+<a href="Vote.jsp?selected="<%=nomi[foreach].replaceAll("\\s+","") + "&id="+foreach%>target="blank" class="btn btn-primary"><%=speak.get(lang)%></a>
+</div>
+</div>
+</div>
+</div>
+
+
+ -->
 <div class="container">
 <%
 	for(Cantanti i : cantanti){
