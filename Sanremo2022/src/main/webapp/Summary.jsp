@@ -16,6 +16,9 @@ padding-left  : 200px;
 a{
 text-decoration:none;
 }
+div.container{
+margin-bottom:9rem;
+}
 </style>
 </head>
 <body>
@@ -67,5 +70,6 @@ ArrayList<Cantanti> fourth_arrayList= (ArrayList<Cantanti>)session.getAttribute(
 </div>
 <a href="Main.jsp"> <--Turn back!</a>
 </div>
+<%@include file="Footer.jsp" %>
 </body>
 </html>

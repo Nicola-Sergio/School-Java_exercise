@@ -23,7 +23,33 @@ color:green;
 /*
 *Use http://easyonlineconverter.com/converters/java-string-escape.html for escaping
 */
-//first object cantanti
+
+			String language = (String)(session.getAttribute("language"));
+			String country = (String)(session.getAttribute("country"));
+			
+			HashMap<String, String> speak = new HashMap<String, String>();
+			
+			speak.put("italian", "Vota ora!");
+			speak.put("english", "Vote now!");
+			speak.put("it","Vota");
+			speak.put("eng","Vote");
+			speak.put("clic","Clicca qui");
+			speak.put("click","Click here");
+			
+			
+			String lang="";
+			String voto="";
+			String click="";
+			
+			if(country.equals("IT")){
+				lang="italian";
+				voto="it";
+				click="clic";
+			} else if(country.equals("US")){
+				lang="english";
+				voto="eng";
+				click="click";
+			}
 
 int c = 0; //contatore per la stampa delle righe row che andranno a contenere le card
 int foreach=0; //contatore utilizzato per tenere traccia del numero di ciclo del foreach
@@ -31,8 +57,16 @@ String [] nomi = {"Gianni Morandi","Noemi","La rappresentante di lista","Yuman",
 session.setAttribute("Array",nomi);
 ArrayList<Cantanti> cantanti = (ArrayList<Cantanti>)session.getAttribute("ArrayList");
 %>
-<div class="bg-secondary text-center mb-5">
-<h1>Sanremo 2022</h1>
+<div class="text-center mb-5">
+<%@include file="Navbar.jsp" %>
+<h3 class="text-danger"><%
+	if(country.equals("IT")){
+				out.println("Edizione ialiana");
+			} else{
+				out.println("English edition");
+			}
+	%>
+</h3>
 </div>
 <div class="container">
 <%
@@ -43,13 +77,12 @@ ArrayList<Cantanti> cantanti = (ArrayList<Cantanti>)session.getAttribute("ArrayL
 	
 		out.println("<div class=\"col-sm\">");
 		out.println("<div class=\"card m-2\" style=\"width: 18rem;\">");
-		  out.println("<img src=\""+cantanti.get(foreach).getImmagine()+"\"class=\"card-img-top\" height=\"250px\"alt=\"...\">");//inserisci altezza e larghezza(rispettivamente 300 e 300)
+		  out.println("<img src=\""+cantanti.get(foreach).getImmagine()+"\"class=\"card-img-top\" height=\"250px\"alt=\"...\">");
 		  out.println("<div class=\"card-body\">");
 		    out.println("<h5 class=\"card-title\">"+nomi[foreach] +"</h5>");
-		    out.println("<p class=\"card-text\">Vota" +" " +nomi[foreach]+".</p>");
-		   // out.println("<a href=\"Votazione.jsp?selected="+foreach +"\ name=\""+nomi[foreach] +"\" target=\"blank\" class=\"btn btn-primary\">Vai alla votazione</a>");
+		    out.println("<p class=\"card-text\">"+speak.get(voto)+"" +" " +nomi[foreach]+".</p>");
 		  
-		   out.println("<a href=\"Votazione.jsp?selected="+nomi[foreach].replaceAll("\\s+","")+ "&id="+foreach +"\" target =\"blank\" class=\"btn btn-primary\">Go somewhere</a>");
+		   out.println("<a href=\"Vote.jsp?selected="+nomi[foreach].replaceAll("\\s+","")+ "&id="+foreach +"\" target =\"blank\" class=\"btn btn-primary\">"+speak.get(lang)+"</a>");
 		   
 		   out.println("</div>");
 		out.println("</div>");
@@ -64,9 +97,10 @@ ArrayList<Cantanti> cantanti = (ArrayList<Cantanti>)session.getAttribute("ArrayL
 %>
 <%if(session.getAttribute("token")=="true"){%>
 	<div class="text-center mt-4">
-	 <a href="Resoconto.jsp">Clicca qui</a>
+	 <a href="Summary.jsp"><%=speak.get(click) %></a>
 	 </div>
 	<%} %>
 </div> 
+<%@include file="Footer.jsp" %>
 </body>
 </html>

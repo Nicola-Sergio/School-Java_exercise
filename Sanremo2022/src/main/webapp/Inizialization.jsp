@@ -9,6 +9,14 @@
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="JSP" %>
 </head>
 <body><% 
+
+Locale locale = request.getLocale(); 
+String language = locale.getLanguage(); 
+String country = locale.getCountry(); 
+
+session.setAttribute("language", language);
+session.setAttribute("country", country);
+
 Cantanti oggetto = new Cantanti();
 oggetto.setId(1);
 oggetto.setNome("Gianni");
@@ -106,6 +114,8 @@ cantanti.add(oggetto9);
 cantanti.add(oggetto10);
 cantanti.add(oggetto11);
 session.setAttribute("ArrayList",cantanti);
+
+
 %>
 <JSP:redirect url="/Main.jsp"/>
 </body>
