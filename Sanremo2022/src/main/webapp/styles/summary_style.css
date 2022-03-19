@@ -1,0 +1,11 @@
+@charset "ISO-8859-1";
+div.container{
+padding-right : 200px;
+padding-left  : 200px;
+}
+div a{
+text-decoration:none;
+}
+div.container{
+margin-bottom:9rem;
+}

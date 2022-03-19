@@ -6,25 +6,7 @@
 <meta charset="ISO-8859-1">
 <title>Votazione cantanti Sanremo</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<style>
-.div{
-height:100px;
-background:linear-gradient(to right, #3098CD 0%, 22.857166359190195%, #032CA2 53.007787466049194%, 68.54693977956856%, #672284 92.42745637893677%);
-color:#f2ebf1;
-}
-button{
-display:inline-block;
-}
-.card-style{
-margin:auto;
-}
-form{
-display:inline-block;
-}
-div.container{
-margin-bottom:11rem;
-}
-</style>
+<link  href="<%=request.getContextPath() %>/styles/vote_style.css"  rel="stylesheet">
 </head>
 <body>
 

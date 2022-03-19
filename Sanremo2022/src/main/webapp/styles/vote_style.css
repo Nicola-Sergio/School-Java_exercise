@@ -1,0 +1,18 @@
+@charset "ISO-8859-1";
+div.div{
+height:100px;
+background:linear-gradient(to right, #3098CD 0%, 22.857166359190195%, #032CA2 53.007787466049194%, 68.54693977956856%, #672284 92.42745637893677%);
+color:#f2ebf1;
+}
+div button{
+display:inline-block;
+}
+div.card-style{
+margin:auto;
+}
+div form{
+display:inline-block;
+}
+div.container{
+margin-bottom:11rem;
+}
