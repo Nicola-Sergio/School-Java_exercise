@@ -1,7 +1,12 @@
+
 @charset "ISO-8859-1";
 div .social-part .fa{
     padding-right:20px;
 }
 div ul li a{
     margin-right: 20px;
+}
+
+ div.flag{
+	margin-right:100px;
 }

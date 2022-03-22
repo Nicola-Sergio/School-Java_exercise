@@ -6,6 +6,7 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
   <meta charset="utf-8">
+  <%@ page import= "java.util.ArrayList,O_mallius.Cantanti,java.util.*"%>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -42,20 +43,36 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Call</a>
           </li>
-           <!-- <li class="nav-item dropdown dmenu">
-            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-              Dropdown link
-            </a>
-            <div class="dropdown-menu sm-menu">
-              <a class="dropdown-item" href="#">Link 1</a>
-              <a class="dropdown-item" href="#">Link 2</a>
-              <a class="dropdown-item" href="#">Link 3</a>
-              <a class="dropdown-item" href="#">Link 4</a>
-              <a class="dropdown-item" href="#">Link 5</a>
-              <a class="dropdown-item" href="#">Link 6</a>
-            </div>
-          </li> -->
+          
           </ul>
+          
+          <% 
+          	 String language_nav = (String)(session.getAttribute("language"));
+			 String country_nav = (String)(session.getAttribute("country"));
+			 
+			 if(country_nav.equals("IT")){
+				 
+		 %>
+		 	<div class="flag">
+		 	
+		 	<img src="<%=request.getContextPath() %>/images/italy.png" width="32px" height="32px" alt="italy_flag">
+		 	
+		 	</div>
+		 <% 	
+				} else if(country_nav.equals("US")){
+					
+		%>
+			<div class="flag">
+		 	
+		 	<img src="<%=request.getContextPath() %>/images/usa.png" width="32px" height="32px" alt="usa_flag">
+		 	
+		 	</div>
+		
+		<%
+					
+				}
+		  %>
+          
           <div class="social-part">
             <i class="fa fa-facebook" aria-hidden="true"></i>
             <i class="fa fa-twitter" aria-hidden="true"></i>

@@ -53,7 +53,7 @@ ArrayList<Cantanti> cantanti = (ArrayList<Cantanti>)session.getAttribute("ArrayL
 <%@include file="Navbar.jsp" %>
 <h3 class="text-danger"><%
 	if(country.equals("IT")){
-				out.println("Edizione ialiana");
+				out.println("Edizione italiana");
 			} else{
 				out.println("English edition");
 			}
@@ -73,7 +73,7 @@ for(Cantanti i : cantanti){
 <div class="card-body">
 <h5 class="card-title"><%=nomi[foreach]%></h5>
 <p class=" card-text"><%=speak.get(voto)+" "+nomi[foreach]%>.</p>
-<a href="Vote.jsp?selected="<%=nomi[foreach].replaceAll("\\s+","") + "&id="+foreach%>target="blank" class="btn btn-primary"><%=speak.get(lang)%></a>
+<a href="Vote.jsp?selected=<%=nomi[foreach].replaceAll("\\s+","") + "&id="+foreach%>" target="blank" class="btn btn-primary"><%=speak.get(lang)%></a>
 </div>
 </div>
 </div>
